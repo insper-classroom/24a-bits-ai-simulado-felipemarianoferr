@@ -7,10 +7,10 @@
 from myhdl import *
 
 
-def exe1_a(a, b, c, s):
+def exe1(a, b, c, s):
     @always_comb
     def comb():
-        pass
+        s.next = (not ((not a) and (not c)) and a and (not b)) or (a and b and c) 
 
     return instances()
 
